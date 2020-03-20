@@ -26,9 +26,11 @@ public class Day0510 {
 			case "b" :
 			case "B" :
 				name = ba;
+				break;
 			case "c" :
 			case "C" :
 				name = bo;
+				break;
 		}
 		
 		switch(nan)
@@ -44,12 +46,12 @@ public class Day0510 {
 				break;
 		}
 		
-		
-		if((name == bo && com == ba) || (name == ga && com == bo) || (name == ba && com == ga))
+		//기본자료형(int, double, 등등)은 == 으로 비교 
+		if((name.equals(bo) && com.equals(ba)) || (name.equals(ga) && com.equals(bo)) || (name.equals(ba) && com.equals(ga)))
 		{
 			System.out.println("사람 승! 컴퓨터: " + com + " 사람 : " + name);
 		}
-		else if(name == com)
+		else if(name.equals(com))
 		{
 			System.out.println("비김 컴퓨터: " + com + " 사람 : " + name);
 		}

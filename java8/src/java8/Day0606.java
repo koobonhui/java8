@@ -15,12 +15,18 @@ public class Day0606 {
 		{
 			for(j = dan; j <= dan; j++)
 			{
-				System.out.print(j + "x" + i + "=" + (i * j) + "\t");
+				System.out.print(j + " x " + i + " = " + (i * j));
 								
 			}
 			System.out.println();
-			sc.close();
+			
 		}
+		System.out.println("==========");
+		for(i = 1; i < 10; i++)
+		{
+			System.out.println(dan + " x " + i + " = " + (i * dan));
+		}
+		sc.close();
 	}
 
 }

@@ -8,6 +8,6 @@ public class Pchild extends Pparent {
 		}
 		
 		void method3() {
-			System.out.println("자식 메소드3");
+			System.out.println("자식 메소드3"); 
 		}
 }

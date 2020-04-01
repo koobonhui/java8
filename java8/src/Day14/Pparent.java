@@ -7,6 +7,6 @@ public class Pparent {
 		}
 		
 		void method2() {
-			System.out.println("부모 메소드 2");
+			System.out.println("부모 메소드 2"); 
 		}
 }

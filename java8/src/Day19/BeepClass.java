@@ -6,13 +6,13 @@ public class BeepClass {
 	public static void main(String[] args) {
 		
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		System.out.println(Thread.currentThread().getName());
+		System.out.println(Thread.currentThread().getName());   // 현재 실행되고 있는(currentThread) 스레드의 이름(getName)을 가져옴
 		
 	
 		Thread t1 = new Thread(new Runnable() {  //익명구현객체
 			
 			@Override
-			public void run() {            
+			public void run() {            // Runnable은 run을 재정의 해야한다.
 				for(int i = 0; i < 5; i++)
 				{
 					tk.beep();

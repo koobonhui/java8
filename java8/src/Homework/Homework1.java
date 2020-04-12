@@ -13,6 +13,11 @@ public class Homework1 extends JFrame{
 			
 	};
 	
+	ImageIcon[] img = { new ImageIcon("Image/22.png"),
+					    new ImageIcon("Image/33.png"),
+					    new ImageIcon("Image/44.png") 
+					  };
+	
 	SelectPanel select = new SelectPanel();
 	ResultDisplay result = new ResultDisplay();
 	
@@ -23,8 +28,7 @@ public class Homework1 extends JFrame{
 		add(result,"Center");
 		add(select, "South");
 		
-		
-		setSize(500,500);
+		setSize(1000,1000);
 		setVisible(true);
 	}
 	
@@ -47,9 +51,9 @@ class SelectPanel extends JPanel{            // 내가 선택하는 자리
 	
 class ResultDisplay extends JPanel{          // 결과 나오는 자리
 	
-		JLabel userJLabel = new JLabel("you");
-		JLabel comJLabel = new JLabel("computer");
-		JLabel resultJLabel = new JLabel("winner");
+		JLabel userJLabel = new JLabel();
+		JLabel comJLabel = new JLabel();
+		JLabel resultJLabel = new JLabel();
 		
 		public ResultDisplay() {
 			setBackground(Color.yellow);
@@ -58,12 +62,16 @@ class ResultDisplay extends JPanel{          // 결과 나오는 자리
 			add(comJLabel);
 		}
 		
-		public void output(Icon img,Icon comImage, String res ) {
+		public void output(Icon img, Icon comImage, Icon im) {
+			userJLabel.setText("나");
+			userJLabel.setFont(new Font("DIALOG", Font.BOLD, 30));
 			userJLabel.setIcon(img);
-			userJLabel.setHorizontalTextPosition(JLabel.LEFT);
+			userJLabel.setHorizontalTextPosition(JLabel.LEFT);    // 사진 왼쪽으로 라벨 나오게
+			comJLabel.setText("컴퓨터");
+			comJLabel.setFont(new Font("DIALOG", Font.BOLD, 30));
 			comJLabel.setIcon(comImage);
-			resultJLabel.setText(res);
-			result.setFont(new Font(Font.DIALOG, Font.BOLD, 20));
+			resultJLabel.setIcon(im);
+//			resultJLabel.setFont(new Font("DIALOG", Font.BOLD, 30));
 			
 		}
 	}
@@ -75,22 +83,19 @@ class EventHandler implements ActionListener{
 			//getSource가 Object 타입임으로 타입변환을 해야한다.
 			JButton btnSrc = (JButton)e.getSource();
 			int selCom = (int)(Math.random()*3); // 0:가위  1:바위, 2:보
+			ImageIcon s = null;
 			
-			String res = "";
-			
-			//유저가 이기는 경우
 			if(btnSrc.getIcon().equals(imgIcons[0]) && selCom == 2 || 
 			   btnSrc.getIcon().equals(imgIcons[1]) && selCom == 0 ||
 			   btnSrc.getIcon().equals(imgIcons[2]) && selCom == 1 )
-				res = "당신이 이겼습니다!";
+				s = img[0];
 			else if(btnSrc.getIcon().equals(imgIcons[0]) && selCom == 0 ||
 				    btnSrc.getIcon().equals(imgIcons[1]) && selCom == 1 ||
 				    btnSrc.getIcon().equals(imgIcons[2]) && selCom == 2 )
-				res = "비겼습니다!!";
+				s = img[1];
 			else 
-				res = "당신이 졌습니다...";
-			
-			result.output(btnSrc.getIcon(), imgIcons[selCom], res);
+				s = img[2];
+			result.output(btnSrc.getIcon(), imgIcons[selCom], s);
 			
 			
 		}

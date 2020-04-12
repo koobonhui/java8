@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Homework1 extends JFrame{
+public class Homework1 extends JFrame {
 	
 	ImageIcon[] imgIcons = {
 			new ImageIcon("Image/c.png"),           // 0번 가위
@@ -13,9 +13,9 @@ public class Homework1 extends JFrame{
 			
 	};
 	
-	ImageIcon[] img = { new ImageIcon("Image/22.png"),
-					    new ImageIcon("Image/33.png"),
-					    new ImageIcon("Image/44.png") 
+	ImageIcon[] img = { new ImageIcon("Image/22.png"),     // Win 사진
+					    new ImageIcon("Image/33.png"),	   // Draw 사진
+					    new ImageIcon("Image/44.png")      // Lose 사진
 					  };
 	
 	SelectPanel select = new SelectPanel();
@@ -45,6 +45,8 @@ class SelectPanel extends JPanel{            // 내가 선택하는 자리
 				this.add(btnButtons[i]);
 				
 				btnButtons[i].addActionListener(new EventHandler());
+				btnButtons[i].setBorderPainted(false);			// 버튼 테두리 지우기
+				btnButtons[i].setBackground(Color.white);		// 버튼 배경 흰색으로 만들기
 			}
 		}
 	}
@@ -56,7 +58,7 @@ class ResultDisplay extends JPanel{          // 결과 나오는 자리
 		JLabel resultJLabel = new JLabel();
 		
 		public ResultDisplay() {
-			setBackground(Color.yellow);
+			setBackground(Color.gray);
 			add(userJLabel);
 			add(resultJLabel);
 			add(comJLabel);
@@ -71,7 +73,6 @@ class ResultDisplay extends JPanel{          // 결과 나오는 자리
 			comJLabel.setFont(new Font("DIALOG", Font.BOLD, 30));
 			comJLabel.setIcon(comImage);
 			resultJLabel.setIcon(im);
-//			resultJLabel.setFont(new Font("DIALOG", Font.BOLD, 30));
 			
 		}
 	}
@@ -101,6 +102,7 @@ class EventHandler implements ActionListener{
 		}
 		
 	}
+
 
 public static void main(String[] args) {
 		new Homework1();

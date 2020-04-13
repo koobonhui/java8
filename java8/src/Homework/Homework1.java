@@ -33,7 +33,7 @@ public class Homework1 extends JFrame {
 	}
 	
 	
-class Select extends JPanel{            // 내가 선택하는 자리
+class Select extends JPanel {            // 내가 선택하는 자리
 	
 		JButton[] Buttons = new JButton[3];
 		
@@ -66,11 +66,11 @@ class Result extends JPanel{          // 결과 나오는 자리
 		
 		public void output(Icon me, Icon computer, Icon re) {
 			user.setText("나");
-			user.setFont(new Font("DIALOG", Font.BOLD, 30));
+			user.setFont(new Font("굴림", Font.BOLD, 30));
 			user.setIcon(me);
 			user.setHorizontalTextPosition(JLabel.LEFT);    // 사진 왼쪽으로 라벨 나오게
 			com.setText("컴퓨터");
-			com.setFont(new Font("DIALOG", Font.BOLD, 30));
+			com.setFont(new Font("굴림", Font.BOLD, 30));
 			com.setIcon(computer);
 			result.setIcon(re);
 			

@@ -42,7 +42,7 @@ class Select extends JPanel{            // 내가 선택하는 자리
 			
 			for(int i=0; i<img.length; i++) {
 				Buttons[i] = new JButton(img[i]);
-				this.add(Buttons[i]);
+				add(Buttons[i]);
 				
 				Buttons[i].addActionListener(new Action());
 				Buttons[i].setBorderPainted(false);			// 버튼 테두리 지우기
@@ -77,7 +77,7 @@ class Result extends JPanel{          // 결과 나오는 자리
 		}
 	}
 
-class Action implements ActionListener{
+class Action implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -86,13 +86,13 @@ class Action implements ActionListener{
 			int Com = (int)(Math.random()*3); // 0:가위  1:바위, 2:보
 			ImageIcon s = null;
 			
-			if(btn.getIcon().equals(img[0]) && Com == 2 || 
-			   btn.getIcon().equals(img[1]) && Com == 0 ||
-			   btn.getIcon().equals(img[2]) && Com == 1 )
+			if(btn.getIcon() == img[0] && Com == 2 || 
+			   btn.getIcon() == img[1] && Com == 0 ||
+			   btn.getIcon() == img[2] && Com == 1 )
 				s = img2[0];
-			else if(btn.getIcon().equals(img[0]) && Com == 0 ||
-				    btn.getIcon().equals(img[1]) && Com == 1 ||
-				    btn.getIcon().equals(img[2]) && Com == 2 )
+			else if(btn.getIcon() == img[0] && Com == 0 ||
+				    btn.getIcon() == img[1] && Com == 1 ||
+				    btn.getIcon() == img[2] && Com == 2 )
 				s = img2[1];
 			else 
 				s = img2[2];

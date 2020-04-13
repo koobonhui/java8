@@ -64,15 +64,15 @@ class Result extends JPanel{          // 결과 나오는 자리
 			add(com);
 		}
 		
-		public void output(Icon img, Icon comImage, Icon im) {
+		public void output(Icon me, Icon computer, Icon re) {
 			user.setText("나");
 			user.setFont(new Font("DIALOG", Font.BOLD, 30));
-			user.setIcon(img);
+			user.setIcon(me);
 			user.setHorizontalTextPosition(JLabel.LEFT);    // 사진 왼쪽으로 라벨 나오게
 			com.setText("컴퓨터");
 			com.setFont(new Font("DIALOG", Font.BOLD, 30));
-			com.setIcon(comImage);
-			result.setIcon(im);
+			com.setIcon(computer);
+			result.setIcon(re);
 			
 		}
 	}

@@ -44,7 +44,7 @@ class Select extends JPanel {            // 내가 선택하는 자리
 				Buttons[i] = new JButton(img[i]);
 				add(Buttons[i]);
 				
-				Buttons[i].addActionListener(new Action());
+				Buttons[i].addActionListener(new Action());   // itemEvent에서 나옴
 				Buttons[i].setBorderPainted(false);			// 버튼 테두리 지우기
 				Buttons[i].setBackground(Color.white);		// 버튼 배경 흰색으로 만들기
 			}
@@ -81,7 +81,7 @@ class Action implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			//getSource가 Object 타입임으로 타입변환을 해야한다.
+			// JSlider에서 나옴 오브젝트라 버튼으로 형변환
 			JButton btn = (JButton)e.getSource();
 			int Com = (int)(Math.random()*3); // 0:가위  1:바위, 2:보
 			ImageIcon s = null;

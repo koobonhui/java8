@@ -22,14 +22,14 @@ public class Homework1 extends JFrame {
 	Result result = new Result();
 	
 	public Homework1() {
-		super("가위 바위 보 게임");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		super("가위 바위 보");
 		
 		add(result,"Center");
 		add(select, "South");
 		
 		setSize(1000,1000);
 		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
 	
@@ -44,7 +44,7 @@ class Select extends JPanel{            // 내가 선택하는 자리
 				Buttons[i] = new JButton(img[i]);
 				this.add(Buttons[i]);
 				
-				Buttons[i].addActionListener(new EventHandler());
+				Buttons[i].addActionListener(new Action());
 				Buttons[i].setBorderPainted(false);			// 버튼 테두리 지우기
 				Buttons[i].setBackground(Color.white);		// 버튼 배경 흰색으로 만들기
 			}
@@ -77,7 +77,7 @@ class Result extends JPanel{          // 결과 나오는 자리
 		}
 	}
 
-class EventHandler implements ActionListener{
+class Action implements ActionListener{
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -96,6 +96,7 @@ class EventHandler implements ActionListener{
 				s = img2[1];
 			else 
 				s = img2[2];
+			
 			result.output(btn.getIcon(), img[Com], s);
 			
 			
